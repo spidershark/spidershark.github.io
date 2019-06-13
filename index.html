@@ -13,16 +13,19 @@
 function myFunction() {
     try {
         Office.context.auth.getAccessTokenAsync(result => {
-            console.dir(result);
+            var a = JSON.stringify(result);
+            document.getElementById("result").innerHTML = a;
         });
     }
     catch(e) {
-        console.log(e);
+        var a = JSON.stringify(e);
+        document.getElementById("result").innerHTML = a;
     }
 }
 </script>
 
 <button onclick="myFunction()">click</button>
+<div id="result"></div>
 
 </body>
 </html>
