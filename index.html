@@ -12,8 +12,9 @@
 <script>
 function myFunction() {
     try {
-        var a = Office.context.auth.getAccessTokenAsync();
-        console.log(a);
+        Office.context.auth.getAccessTokenAsync(result => {
+            console.dir(result);
+        });
     }
     catch(e) {
         console.log(e);
