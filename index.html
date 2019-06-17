@@ -12,7 +12,11 @@
 <script>
 function myFunction() {
     try {
-        Office.context.auth.getAccessTokenAsync(result => {
+        var options = {
+            forceAddAccount: false,
+            forceConsent: false,
+        }
+        Office.context.auth.getAccessTokenAsync(options, result => {
             var a = JSON.stringify(result);
             document.getElementById("result").innerHTML = a;
         });
